@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="5.0">
-  <servlet> <!-- 브라우저에서 요청하는 매핑 이름에 대해 실제로 실행하는 서블릿 클래스를 설정하는 태그입니다  -->
-  	<servlet-name>aaa</servlet-name> <!-- <servlet-mapping> 태그의 <servlet-name> 태그와 값이 동일합니다 -->
-  	<servlet-class>sec01.ex01.FirstServlet</servlet-class> <!-- 브라우저에서 요청하는 매핑 이름에 대해 실제로 기능을 수행하는 서블릿 클래스를 설정합니다 -->
+  <servlet>
+    <servlet-name>aaa</servlet-name>
+    <servlet-class>sec01.ex01.FirstServlet</servlet-class>
   </servlet>
   <!-- 주석 -->
   <servlet-mapping>
-  	<servlet-name>aaa</servlet-name> <!-- 매핑 이름으로 요청시 값이 같은 <servlet>태그 안의 <servlet-name> 태그와 연결됩니다 -->
-  	<url-pattern>/first</url-pattern> <!--브라우저에서 sec01.ex01.FirstServlet을 요청하는 논리적인 서블릿 이름 입니다 -->
-  </servlet-mapping> <!-- 브라우저에서 요청하는 논리적인 서블릿을 설정합니다 -->
+    <servlet-name>aaa</servlet-name>
+    <url-pattern>/first</url-pattern>
+  </servlet-mapping>
 </web-app>
