@@ -8,4 +8,6 @@
 3월 16일 <br>
 서블릿의 응답 처리 방법과 GET 방식 서블릿 요청과 POST 방식 서블릿 요청하는 방법을 습득했다. 
 <br>
-404에러 발생시 경로 문제에서 맵핑 문제로 @WebServlet("/login5") 로 해결함 
+404에러 발생시 경로 문제에서 맵핑 문제로 @WebServlet("/login5") 로 해결함 <br>
+ 3/20까지 제출해야하는  \JSP\Chapter06\src\sec04\ex01에 LoginTest,LoginTest2 서블릿 생성하여 해결. 그리고 \JSP\Chapter06\webContent 에 test01 폴더를 생성하여
+login.html 을 만들어 작성함. 교재에 나온대로 login.html에서 LoginTest2를 매핑하도록 수정한 내용을 추가했다.
