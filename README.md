@@ -4,3 +4,8 @@
 <br>
 3월 14일 <br>
 오늘 에러가 발생한 이유는 web.xml 화면과 ThirdServlet 서블릿에 <servlet-mapping>이 중복이 되어 문제가 발생하였다.
+<br>
+3월 16일 <br>
+서블릿의 응답 처리 방법과 GET 방식 서블릿 요청과 POST 방식 서블릿 요청하는 방법을 습득했다. 
+<br>
+404에러 발생시 경로 문제에서 맵핑 문제로 @WebServlet("/login5") 로 해결함 
