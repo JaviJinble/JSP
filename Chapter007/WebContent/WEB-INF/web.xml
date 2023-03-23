@@ -19,4 +19,34 @@
     <servlet-name>MemberServlet</servlet-name>
     <url-pattern>/Member</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Member2</display-name>
+    <servlet-name>Member2</servlet-name>
+    <servlet-class>sec01.ex02.MemberServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Member2</servlet-name>
+    <url-pattern>/Member2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Member3</display-name>
+    <servlet-name>Member3</servlet-name>
+    <servlet-class>sec02.ex01.MemberServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Member3</servlet-name>
+    <url-pattern>/Member3</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Member4</display-name>
+    <servlet-name>Member4</servlet-name>
+    <servlet-class>sec02.ex02.MemberServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Member4</servlet-name>
+    <url-pattern>/Member4</url-pattern>
+  </servlet-mapping>
 </web-app>
