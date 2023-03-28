@@ -1,9 +1,9 @@
-package sec02.ex02;
+package sec02.ex03;
 
 import java.sql.Connection;
 import java.sql.Date;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,36 +20,13 @@ public class MemberDAO {
 	
 	//추가
 	public MemberDAO() {
-		try {
+		try 
+		{
 			Context ctx = new InitialContext();
 			Context envContext = (Context) ctx.lookup("java:/comp/env");
 			dataFactory = (DataSource) envContext.lookup("jdbc/oracle");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public void addMember(MemberVO memberVO)
-	{
-		try
-		{
-			con = dataFactory.getConnection();
-			String id = memberVO.getId();
-			String pwd = memberVO.getPwd();
-			String name = memberVO.getName();
-			String email = memberVO.getEmail();
-			
-			String query = "insert into t_member";
-			query += " (id,pwd,name,email)";
-			query += " values(?,?,?,?)";
-			System.out.println("prepareStatememt: "+query);
-			pstmt.setString(1, id);
-			pstmt.setString(2, pwd);
-			pstmt.setString(3, name);
-			pstmt.setString(4, email);
-			pstmt.executeUpdate();
-			pstmt.close();
-		} catch (Exception e)
+		} 
+		catch (Exception e) 
 		{
 			e.printStackTrace();
 		}
@@ -60,12 +37,9 @@ public class MemberDAO {
 		List<MemberVO> list = new ArrayList<MemberVO>();
 		try
 		{
-			// connDB();
 			con=dataFactory.getConnection();
-			
 			String query = "select * from t_member1";
 			System.out.println("prepareStatememt: " + query);
-			
 			pstmt = con.prepareStatement(query);
 			ResultSet rs = pstmt.executeQuery(query);
 			
@@ -88,11 +62,57 @@ public class MemberDAO {
 			rs.close();
 			pstmt.close();
 			con.close();
-		}catch (Exception e)
+		}
+		catch (Exception e)
 		{
 			e.printStackTrace();
 		}
 		return list;
+	}	
+
+	public void addMember(MemberVO memberVO)
+	{
+		try
+		{
+			con = dataFactory.getConnection();
+			String id = memberVO.getId();
+			String pwd = memberVO.getPwd();
+			String name = memberVO.getName();
+			String email = memberVO.getEmail();
+			String query = "insert into t_member1";
+			query += "(id,pwd,name,email)";
+			query += "values(?,?,?,?)";
+			System.out.println("prepareStatement: "+ query);
+			pstmt=con.prepareStatement(query);
+			pstmt.setString(1,id);
+			pstmt.setString(2,pwd);
+			pstmt.setString(3,name);
+			pstmt.setString(4,email);
+			pstmt.executeUpdate();
+			pstmt.close();
+		} 
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 	
+	public void delMember(String id)
+	{
+		try
+		{
+			con = dataFactory.getConnection();
+			
+			String query = "delete from t_member1" + " where id=?";
+			System.out.println("prepareStatememt:" + query);
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1,id);
+			pstmt.executeUpdate();
+			pstmt.close();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}	
 }

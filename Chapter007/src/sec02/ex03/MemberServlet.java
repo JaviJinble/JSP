@@ -1,4 +1,5 @@
-package sec02.ex02;
+package sec02.ex03;
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -6,13 +7,13 @@ import java.sql.Date;
 import java.util.List;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+@WebServlet("/member5")
 public class MemberServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doHandle(request, response);
@@ -20,7 +21,7 @@ public class MemberServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doHandle(request, response);
 	}
-	protected void doHandle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private void doHandle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		
 		response.setContentType("text/html;charset=utf-8");
@@ -41,11 +42,11 @@ public class MemberServlet extends HttpServlet {
 			vo.setEmail(_email);
 			dao.addMember(vo);
 		}
-//		else if(command != null && command.equals("delMember"))
-//		{
-//			String id = request.getParameter("id");
-//			dao.delMember(id);
-//		}
+		else if(command != null && command.equals("delMember"))
+		{
+			String id = request.getParameter("id");
+			dao.delMember(id);
+		}
 		List<MemberVO> list = dao.listMembers();
 		out.print("<html><body>");
 		out.print("<table border=1><tr align='center' bgcolor='lightgreen'>");
@@ -53,17 +54,17 @@ public class MemberServlet extends HttpServlet {
 		
 		for(int i = 0; i < list.size(); i++)
 		{
-			MemberVO memberVO = list.get(i);
+			MemberVO memberVO = (MemberVO) list.get(i);
 			String id = memberVO.getId();
 			String pwd = memberVO.getPwd();
 			String name = memberVO.getName();
 			String email = memberVO.getEmail();
 			Date joinDate = memberVO.getJoinDate();
 			out.print("<tr><td>"+id+"</td><td>"+pwd+"</td><td>"+name+"</td><td>"+email+"</td><td>"+joinDate+
-					"</td><td>"+"<a href='Chapter007/member4?command=delMember&id="+id+"'> 삭제 </a></td></tr>");
+					"</td><td>"+"<a href='/Chapter007/member5?command=delMember&id="+id+"'> 삭제 </a></td></tr>");
 		}
 		out.print("</table></body></html>");
-		out.print("<a href='Chapter007/memberForm.html'>새 회원 등록하기 </a>");
+		out.print("<a href='/Chapter007/memberForm.html'>새 회원 등록하기 </a>");
 		
 	}
 

@@ -41,12 +41,14 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>Member4</display-name>
-    <servlet-name>Member4</servlet-name>
+    <display-name>member4</display-name>
+    <servlet-name>member4</servlet-name>
     <servlet-class>sec02.ex02.MemberServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Member4</servlet-name>
-    <url-pattern>/Member4</url-pattern>
+    <servlet-name>member4</servlet-name>
+    <url-pattern>/member4</url-pattern>
   </servlet-mapping>
+ 
+
 </web-app>

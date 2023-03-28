@@ -21,7 +21,7 @@
 			alert("이메일은 필수입니다.")
 		} else {
 			frmMember.method = "post";
-			frmMember.action = "member4";
+			frmMember.action = "member5";
 			frmMember.submit();
 		}
 	}
@@ -37,7 +37,7 @@
 			</tr>
 			<tr>
 				<td>비밀번호</td>
-				<td><input type="text" name="pwd"></td>
+				<td><input type="password" name="pwd"></td>
 			</tr>
 			<tr>
 				<td>이름</td>
@@ -45,11 +45,12 @@
 			</tr>
 			<tr>
 				<td>이메일</td>
-				<td><input type="text" name="email"></td>
+				<td><input type="email" name="email"></td>
 			</tr>
 		</table>
-		<imput type="button" value="가입하기" onclick="fn_sendMember()">
-		<imput type="reset" value="command" value="addMember" />
+		<input type="button" value="가입하기" onclick="fn_sendMember()">
+		<input type="reset" value="다시 입력">
+		<input type="hidden" name="command" value="addMember" />
 	</form>
 </body>
 </html>
