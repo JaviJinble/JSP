@@ -14,5 +14,8 @@ login.html 을 만들어 작성함. 교재에 나온대로 login.html에서 Logi
 3월 21일 <br>
  오늘 DB를 사용하여 서블릿으로 회원 정보 테이블의 회원 정보 조회를 해보았다 <br>
 3월 23일 <br>
- DataSource 이용해 데이터베이스 연동해보았다
+ DataSource 이용해 데이터베이스 연동해보았다<br>
+3월 28일 <br>
+ 서블릿으로 회원 추가하기와 삭제하기를 작성했다 이과정중 정상적인 회원 등록이 안되어 원인을 찾아보니 변수 command이 null 값이였어 확인해보니 <br>
+ memberForm.html 코드 부분에서 줄53에서 name="command"을 value="command" 로 작성되어 있어서 문제가 있어 바꿔주니 해결이 되었다.
 
