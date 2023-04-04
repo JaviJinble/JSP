@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="5.0">
   <display-name>Chapter08</display-name>
+  <context-param>
+    <param-name>menu_member</param-name>
+    <param-value>회원등록 회원조회 회원수정</param-value>
+  </context-param>
+  <context-param>
+    <param-name>menu_order</param-name>
+    <param-value>주문조회 주문등록 주문수정 주문취소</param-value>
+  </context-param>
+  <context-param>
+    <param-name>menu_goods</param-name>
+    <param-value>상품조회 상품등록 상품수정 상품삭제</param-value>
+  </context-param>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>
@@ -188,5 +200,45 @@
   <servlet-mapping>
     <servlet-name>ViewServlet</servlet-name>
     <url-pattern>/viewMembers</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SetServletContext</display-name>
+    <servlet-name>SetServletContext</servlet-name>
+    <servlet-class>sec03.ex01.SetServletContext</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SetServletContext</servlet-name>
+    <url-pattern>/cset</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetServletContext</display-name>
+    <servlet-name>GetServletContext</servlet-name>
+    <servlet-class>sec03.ex01.GetServletContext</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetServletContext</servlet-name>
+    <url-pattern>/cget</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ContextParamServlet</display-name>
+    <servlet-name>ContextParamServlet</servlet-name>
+    <servlet-class>sec03.ex02.ContextParamServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ContextParamServlet</servlet-name>
+    <url-pattern>/initMenu</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ContextFileServlet</display-name>
+    <servlet-name>ContextFileServlet</servlet-name>
+    <servlet-class>sec03.ex03.ContextFileServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ContextFileServlet</servlet-name>
+    <url-pattern>/cfile</url-pattern>
   </servlet-mapping>
 </web-app>
