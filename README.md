@@ -24,3 +24,6 @@ login.html 을 만들어 작성함. 교재에 나온대로 login.html에서 Logi
 <br>
 4월 4일 <br>
 ServletContext와 ServletConfig 사용법 배워 앞으로의 웹 프로그래밍 개발 시 유용한 기능을 제공하는 클래스들을 배워 보았다.
+<br>
+4월 6일 <br>
+load-on-startup을 사용해 실행 시간을 단축한다 왜냐하면 서블릿은 브라우저에서 최초 요청 시 init() 메서드를 실행한 후 메모리에 로드되어 기능을 수행한다. 따라서 실행 시간이 길어질 수 밖에 없다.
