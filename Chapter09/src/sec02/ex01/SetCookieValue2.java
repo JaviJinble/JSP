@@ -12,20 +12,19 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 
-public class SetCookieValue extends HttpServlet {
+public class SetCookieValue2 extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		Date d=new Date();
-		
-		// Cookie 객체를 생성한 후 cookieTest 이름으로 한글 정보를 인코딩하여 쿠키에 저장.
 		Cookie c=new Cookie("cookieTest",URLEncoder.encode("JSP프로그래밍입니다.","utf-8"));
+		//c.setMaxAge(24*60*60);
+		// 유효기간 설정 음수로 지정하여 session 쿠키 만듬
+		// 브라우저 종료 시 종료.
+		c.setMaxAge(-1);
 		
-		// 유효기간 설정 24시간
-		c.setMaxAge(24*60*60);
-		
-		// 생성된 쿠키를 브라우저로 전송.
+		// 생성된 쿠키를 브라우저로 전송
 		response.addCookie(c);
 		
 		out.println("현재시간 : "+d);
