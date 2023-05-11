@@ -18,8 +18,9 @@
 		<meta charset="UTF-8">
 		<title>회원 정보 출력창</title>
 		
+		<!-- <h1> 태그의 텍스트를 중앙에 정렬 -->
 		<style>
-			h1 {
+			h1 {	
 				text-align: center;
 			}
 			table {
@@ -54,6 +55,7 @@
 			     <th>가입일자</th>
 			</tr>
 		</thead>
+					<!-- MemberDAO에서 조회한 회원 정보를 for 반복문을 이용해 테이블의 행으로 출력 -->
 		<%	
 			for (int i = 0; i < membersList.size(); i++) {
 				MemberVO vo = (MemberVO)membersList.get(i);

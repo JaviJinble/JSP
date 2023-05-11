@@ -20,6 +20,7 @@
 	  </style>
 	</head>
 	<body>
+							<!-- 이름 member.jsp로 전송 -->
 	   <form method="post" action="member.jsp">
 		   이름 : <input type="text" name="name">
 		   <input type ="submit" value="조회하기">

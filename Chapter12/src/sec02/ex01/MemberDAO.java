@@ -29,17 +29,17 @@ public class MemberDAO {
 
 	public List listMembers(MemberVO memberVO) {
 		List<MemberVO> membersList = new ArrayList();
-		String _name = memberVO.getName();
+		String _name = memberVO.getName(); // 조회할 이름을 가져옴
 		try {
 			con = dataFactory.getConnection();
 			
-			String query = "select * from t_member";
+			String query = "select * from t_member1";
 			
-			if((_name!=null && _name.length()!=0)){
+			if((_name!=null && _name.length()!=0)){ // name 값이 존재하면 SQL문에 where절을 추가하여 해당 이름으로 조회
 				 query+=" where name=?";
 				 pstmt = con.prepareStatement(query);
-				 pstmt.setString(1, _name);
-			}else {
+				 pstmt.setString(1, _name); // 첫 번째'?'에 전달된 이름을 지정
+			}else { // _name 값이 없으면 모든 회원 정보를 조회합니다.
 				pstmt = con.prepareStatement(query);	
 			}
 			
