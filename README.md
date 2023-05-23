@@ -48,3 +48,7 @@ jsp 에러 코드에 따른 예외 페이지 , jsp welcome 파일 지정하기 �
  <br>
 5월 16일 <br>
  JSP는 스크립트릿의 자바 코드를 제거하고 디자이너 입장에서 더 쉽고 편리하게 작업할 수 있는 태그 형태로 기능을 제공하게 되었다.
+ <br>
+ 5월 23일 <br>
+ https://stackoverflow.com/questions/8021370/java-lang-noclassdeffounderror-javax-servlet-jsp-tagext-taglibraryvalidator
+ <br>
