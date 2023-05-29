@@ -52,3 +52,6 @@ jsp 에러 코드에 따른 예외 페이지 , jsp welcome 파일 지정하기 �
  5월 23일 <br>
  https://stackoverflow.com/questions/8021370/java-lang-noclassdeffounderror-javax-servlet-jsp-tagext-taglibraryvalidator
  <br>
+5월 29일 <br>
+ 14.10 포매팅 태그 라이브러리<br>
+14.12 표현 언어와 JSTL을 이용한 회원 관리 실습<br>
