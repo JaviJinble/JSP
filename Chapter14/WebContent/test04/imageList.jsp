@@ -58,6 +58,14 @@
 		      <span>선택하기</span>
 		    </li>
 		<!-- 반복문으로 이미지 가져오기 -->
+			<c:forEach var="i" begin="1" end="9" step="1">
+				<li>
+					<a href='#' style='margin-left:50px'>
+						<img src='../image/duke.png' width='90' height='90' alt='' /></a>
+					<a href='#'><strong>이미지 이름: 듀크${i}</strong></a>
+					<a href='#'> <input name='chk${i}' type='checkbox' /></a>
+				</li>
+			</c:forEach>
 		</ul>
 	</body>
 </html>
